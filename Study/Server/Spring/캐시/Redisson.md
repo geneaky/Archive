@@ -42,3 +42,4 @@ class LockClientTest extends IntegrationTest {
 }
 ```
 
+unlock을 하기전 현재 thread가 lock을 획득한 thread인지 확인하는 로직을 넣는 예제를 많이 보았는데
