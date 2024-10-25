@@ -48,3 +48,4 @@ unlock을 하기전 현재 thread가 lock을 획득한 thread인지 확인하는
 isHeldByCurrentThread()가 있는 이유는 redisson 내부적으로 lock을 획득한 thread가 어떤 thread인지 알아야 같은 스레드가 중복으로 lock을 획득하는 일을 방지하기 위해, 확인을 위해 사용된다
 
 
+RLock 구현체의 tryLock()을 실행하면 leaseTime을 인자로 설정할 수 있는데
