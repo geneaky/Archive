@@ -1,0 +1,1 @@
+Project, Area, Resource 범주에서 더 이상 관리하지 않아도 되고 이후 참조 목적의 노트로 구성
