@@ -59,6 +59,70 @@ tryLock()의 인자로 leaseTime을 설정하지 않은 경우 기본 -1이 설�
 default 30초 lock 점유 시간동안 현재 스레드가 작업을 종료하지 못한 경우 `RedissonBaseLock` 클래스의 `renewExpiration()`을 호출해서 leaseTime을 조금씩 늘려준다.
 lock ttl을 늘려주는 네트워크 요청이 실패하는 경우 `CompletionException`(RunTimeException)이 발생되므로 TransactionRollback에도 영향이 없다.
 
+```java
+    @Test
+    @DisplayName("redis watch dog은 thread가 아직 실행중인 경우 leaseTime을 늘려준다")
+    public void withLeaseTime() throws Exception {
+        int threadCount = 3;
+        long blockingTime = 40000; // 40초 블록킹
+        CountDownLatch countDownLatch = new CountDownLatch(threadCount);
+        ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < threadCount; i++) {
+            executorService.execute(() -> {
+                RLock lock = redissonClient.getLock("withLeaseTimeTest");
+                try {
+                    if (lock.tryLock(1300000, TimeUnit.SECONDS)) { // lock wating 130초, lease time default 30초, blocking 40초 - 총 120 초
+                        Thread.sleep(blockingTime);
+                        lock.unlock();
+                    }
+                } catch (Exception ignore) {
+                    System.out.println(ignore.getMessage());
+                } finally {
+                    countDownLatch.countDown();
+                }
+            });
+        }
+        countDownLatch.await();
+        long end = System.currentTimeMillis();
+
+        assertThat(end).isGreaterThanOrEqualTo(start + (blockingTime * threadCount));
+    }
+
+    @Test
+    @DisplayName("redis lock 점유 시간 leaseTime을 명시한 경우 작업중인 task를 중단하고 lock을 해제한다")
+    public void withoutLeaseTime() throws Exception {
+        int threadCount = 3;
+        long blockingTime = 40000; // 40초 블록킹
+        long leaseTime = 30; // lock 점유 시간 30초
+        CountDownLatch countDownLatch = new CountDownLatch(threadCount);
+        ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < threadCount; i++) {
+            executorService.execute(() -> {
+                RLock lock = redissonClient.getLock("withoutLeaseTimeTest");
+                try {
+                    if (lock.tryLock(130, leaseTime, TimeUnit.SECONDS)) { // lock wating 130초, lease time 30초, blocking 40초 - 총 120초
+                        Thread.sleep(blockingTime);
+                        lock.unlock();
+                    }
+                } catch (Exception ignore) {
+                    System.out.println(ignore.getMessage());
+                } finally {
+                    countDownLatch.countDown();
+                }
+            });
+        }
+        countDownLatch.await();
+        long end = System.currentTimeMillis();
+
+        assertThat(end).isLessThan(start + (blockingTime * threadCount));
+    }
+
+```
+
 ==출처==
 [redisson base lock github](https://github.com/redisson/redisson/blob/3596f47cd601a588ce9c4dbfe4b2be5b8320d4ba/redisson/src/main/java/org/redisson/RedissonBaseLock.java#L118)
 [stack over flow](https://stackoverflow.com/questions/70112709/rlocklocklong-leasetime-timeunit-unit-leasetime-lower-than-execution-time)
