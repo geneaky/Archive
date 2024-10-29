@@ -59,8 +59,6 @@ tryLock()의 인자로 leaseTime을 설정하지 않은 경우 기본 -1이 설�
 default 30초 lock 점유 시간동안 현재 스레드가 작업을 종료하지 못한 경우 `RedissonBaseLock` 클래스의 `renewExpiration()`을 호출해서 leaseTime을 조금씩 늘려준다.
 lock ttl을 늘려주는 네트워크 요청이 실패하는 경우 `CompletionException`(RunTimeException)이 발생되므로 TransactionRollback에도 영향이 없다.
 
-https://github.com/redisson/redisson/blob/3596f47cd601a588ce9c4dbfe4b2be5b8320d4ba/redisson/src/main/java/org/redisson/RedissonBaseLock.java#L118
-
-https://stackoverflow.com/questions/70112709/rlocklocklong-leasetime-timeunit-unit-leasetime-lower-than-execution-time
-
-[redisson base lock github]()
+==출처==
+[redisson base lock github](https://github.com/redisson/redisson/blob/3596f47cd601a588ce9c4dbfe4b2be5b8320d4ba/redisson/src/main/java/org/redisson/RedissonBaseLock.java#L118)
+[stack over flow](https://stackoverflow.com/questions/70112709/rlocklocklong-leasetime-timeunit-unit-leasetime-lower-than-execution-time)
