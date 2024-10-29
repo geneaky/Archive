@@ -55,6 +55,7 @@ RLock 구현체의 tryLock()을 실행하면 leaseTime을 인자로 설정할 �
 만약 lock을 점유하고 있는 동안 task를 끝내지 못한 경우 unlock전에 leaseTime이 다 소요되어 `IllegalMonitorStateException`(RunTimeException) 예외가 발생하게된다.
 
 tryLock()의 인자로 leaseTime을 설정하지 않은 경우 기본 -1이 설정되어 lock watch dog이 동작하게 되는데
-default 30초 lock 점유 시간동안 현재 스레드가 작업을 종료하지 못한 경우
+default 30초 lock 점유 시간동안 현재 스레드가 작업을 종료하지 못한 경우 `RedissonBaseLock` 클래스의 `renewExpiration()`을 호출해서 leaseTime을 조금씩 늘려준다.
+lock ttl을 늘려주는 sp
 lock을 획득 후 process를 실행하는 기간이 길어져 아직 process 처리중에 leaseTime이 끝난 경우 redisson 내부적으로 watch dog이 현재 lock을 점유한 스레드가 활성 상태인지 확인하여 leasetime을 늘려준다
 tryLock의 인자로 leaseTime을 설정하지 않으면 기본  `-1` 이 설정되어 watchdog으로 동작한다
