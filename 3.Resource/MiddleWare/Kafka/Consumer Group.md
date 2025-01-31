@@ -8,4 +8,8 @@
 1. 같은 consumer group에 속한 컨슈머들은 같은 메시지를 중복해서 읽지 않는다.
 	- 같은 consumer group에 속한 컨슈머들은 서로 다른 파티션을 할당 받아 메시지를 처리하므로, 하나의 메시지는 오직 한 번 처리된다.
 	- 서로 다른 consumer group은 독립적으로 메시지를 소비하므로, 각 consumer group은 동일한 메시지를 받을 수 있다.
-		- Topic - A를 group - 1, group - 2가 같이 소비하면 메시지르
+		- Topic - A를 group - 1, group - 2가 같이 소비하면 메시지를 2번 읽을 수 있다.
+
+
+1. 하나의 consumer group은 여러 개의 컨슈머로 구성될 수 있다.
+	1. 
