@@ -24,7 +24,6 @@
 
 - native 쿼리 사용 o
 	- postgresql specific query는 jdbctemplate으로 커버
-
 - 배치 update 
 	- 단 건은 jpa 더티 체킹 사용
 - 배치 delete
