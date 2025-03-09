@@ -6,7 +6,7 @@
 	- 엔티티 더티 체킹 확인 o
 	- 페치조인 o 
 	- 일반 조인 o
-	- 페이징 조회 
+	- 페이징 조회 o
 		- order by limit offset 직접 설정 가능한지?
 
 - projection 조회
