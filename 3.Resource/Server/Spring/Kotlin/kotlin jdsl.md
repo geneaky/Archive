@@ -17,13 +17,16 @@
 - join 서브 쿼리 가능한지?(인라인뷰) o
 - select절 서브 쿼리 가능한지?(스칼라) o
 - where절 서브 쿼리 가능한지?
+
 - order by limit offset 직접 설정 가능?
 - group by, count, max
 
-- jdsl을 사용하지 않
+- jdsl을 사용하지 않는 상황
 	- postgresql specific query, native query가 필요한 상황은 jdbctemplate으로 커버
 	- 당장 jdsl로 하기 어렵거나, 학습이 필요하거나, 번거로운 부분은 jdbctemplate or @query로 커버
+
 - 배치 update o
 	- 단 건은 jpa 더티 체킹 사용
+
 - 배치 delete o
 	- 단 건은 repository delete 사용
