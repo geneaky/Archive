@@ -7,18 +7,17 @@
 	- 페치조인 o 
 	- 일반 조인 o
 	- 페이징 조회 
-
+		- order by limit offset 직접 설정 가능한지?
 
 - projection 조회
 	- 단 건 조회 o
-	- 일반 조인
+	- 일반 조인 o
 	- 페이징 조회
 		- order by limit offset 직접 설정 가능한지?
-	- count, exist
 
-- from절 서브 쿼리 가능한지?
+- from절 서브 쿼리 가능한지?(inlineview)
 - where절 서브 쿼리 가능한지?
-- select절 서브 쿼리 가능한지?
+- select절 서브 쿼리 가능한지?(스칼)
 - join절 서브 쿼리 가능한지?
 
 - native 쿼리 사용 o
