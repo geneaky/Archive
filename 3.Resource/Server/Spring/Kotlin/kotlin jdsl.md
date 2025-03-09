@@ -21,10 +21,9 @@
 - select절 서브 쿼리 가능한지?
 - join절 서브 쿼리 가능한지?
 
-
 - native 쿼리 사용 o
 	- postgresql specific query는 jdbctemplate으로 커버
-- 배치 update 
+- 배치 update o
 	- 단 건은 jpa 더티 체킹 사용
-- 배치 delete
+- 배치 delete o
 	- 단 건은 repository delete 사용
