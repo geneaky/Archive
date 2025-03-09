@@ -11,11 +11,10 @@
 
 - projection 조회
 	- 단 건 조회 o
+	- 일반 조인
 	- 페이징 조회
 		- order by limit offset 직접 설정 가능한지?
 	- count, exist
-	- json 컬럼, varchar[] 컬럼
-	- 일반 조인
 
 - from절 서브 쿼리 가능한지?
 - where절 서브 쿼리 가능한지?
