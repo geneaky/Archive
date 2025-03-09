@@ -15,10 +15,10 @@
 	- 페이징 조회
 		- order by limit offset 직접 설정 가능한지?
 
-- from절 서브 쿼리 가능한지?(inlineview)
+- from절 서브 쿼리 가능한지?(인라인뷰)
+- join절 서브 쿼리 가능한지?(인라인뷰)
 - where절 서브 쿼리 가능한지?
-- select절 서브 쿼리 가능한지?(스칼)
-- join절 서브 쿼리 가능한지?
+- select절 서브 쿼리 가능한지?(스칼라)
 
 - native 쿼리 사용 o
 	- postgresql specific query는 jdbctemplate으로 커버
