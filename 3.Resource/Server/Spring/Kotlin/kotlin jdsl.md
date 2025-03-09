@@ -17,7 +17,7 @@
 - join 서브 쿼리 가능한지?(인라인뷰) o
 - where절 서브 쿼리 가능한지?
 - select절 서브 쿼리 가능한지?(스칼라)
-- order by limit offset 직접 설정
+- order by limit offset 직접 설정 가능?
 - group by, count, max
 
 - native 쿼리 사용 o
