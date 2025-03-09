@@ -15,13 +15,14 @@
 
 - from 서브 쿼리 가능한지?(인라인뷰) o
 - join 서브 쿼리 가능한지?(인라인뷰) o
+- select절 서브 쿼리 가능한지?(스칼라) o
 - where절 서브 쿼리 가능한지?
-- select절 서브 쿼리 가능한지?(스칼라)
 - order by limit offset 직접 설정 가능?
 - group by, count, max
 
 - native 쿼리 사용 o
 	- postgresql specific query는 jdbctemplate으로 커버
+	- 당장 jdsl로 하기 어렵거나, 학습이 필요하거
 - 배치 update o
 	- 단 건은 jpa 더티 체킹 사용
 - 배치 delete o
