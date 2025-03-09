@@ -12,7 +12,7 @@
 - projection 조회
 	- 단 건 조회 o
 	- 일반 조인 o
-	- 페이징 조회
+	- 페이징 조회 o
 		- order by limit offset 직접 설정 가능한지?
 
 - from절 서브 쿼리 가능한지?(인라인뷰)
