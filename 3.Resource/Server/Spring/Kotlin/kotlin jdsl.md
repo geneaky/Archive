@@ -18,8 +18,8 @@
 - select절 서브 쿼리 가능한지?(스칼라) o
 - where절 서브 쿼리 가능한지? o
 
-- order by limit offset 직접 설정 가능?
-- group by, count, max
+- limit offset 직접 설정 가능? o
+- group by, count, max?
 
 - jdsl을 사용하지 않는 상황
 	- postgresql specific query, native query가 필요한 상황은 jdbctemplate으로 커버
