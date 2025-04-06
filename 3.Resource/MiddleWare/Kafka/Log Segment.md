@@ -5,6 +5,9 @@ Retention 정책에 따라 몇일동안 얼마만큼의 용량을 유지할지 �
 디스크가 꽉 차면 더 이상 로그가 쌓이지 않거나 삭제가 발생할 수 있다.
 
 토픽의 파티션별 디렉토리에 로그파일로 메시지를 저장하는데 그 파일을 log segement라고 한다
-offset를 기억하는 파일은 index 파일이다
 세그먼트 파일 번호는 offset 번호로 지정된다
+
+offset를 기억하는 파일은 index 파일이다
+offset 별로 byte position을 가지고 있어서 log segment 파일을 스캔할때 파일 포인터를 어디서부터 
+
 
