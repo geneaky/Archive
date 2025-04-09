@@ -17,4 +17,9 @@ EventSource(): 상세 서버 주소로부터 event를 전달받을 인스턴스 
 
 
 ##### eventsource instance의 프로퍼티
-- 연결 상태 
+- 연결 상태 -  readyState
+	- CONNECTING : 0
+	- OPEN : 1
+	- CLOSE : 2
+- 연결 수립된 source url  - url
+- 
