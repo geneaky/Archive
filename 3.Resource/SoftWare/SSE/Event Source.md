@@ -26,3 +26,4 @@ EventSource(): 상세 서버 주소로부터 event를 전달받을 인스턴스 
 
 ##### eventsource instance의 메서드
 - close() : readyState를 CLOSE 상태로 만든다
+- 
