@@ -16,11 +16,13 @@ connection이 한 번 수립되면 서버로부터 들어오는 message(*event*)
 EventSource(): 상세 서버 주소로부터 event를 전달받을 인스턴스 생성
 
 
-##### eventsource instance의 프로퍼티
+##### eventsource instance의 프로퍼티(모든 프로퍼티는 readOnly)
 - 연결 상태 -  readyState
 	- CONNECTING : 0
 	- OPEN : 1
 	- CLOSE : 2
 - 연결 수립된 source url  - url
 - cors 정보 - withCredentials
-- 
+
+##### eventsource instance의 메서드
+- close() : readyState를 CLOSE 상태로 만든다
