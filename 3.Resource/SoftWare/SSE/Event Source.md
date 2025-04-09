@@ -29,4 +29,5 @@ EventSource(): 상세 서버 주소로부터 event를 전달받을 인스턴스 
 
 
 ##### event 종류
-- error
+- error : eventsource connection이 수립되지 않을때 발생
+- message: evetnsource로부터 data를 받을때 발생
