@@ -22,4 +22,5 @@ EventSource(): 상세 서버 주소로부터 event를 전달받을 인스턴스 
 	- OPEN : 1
 	- CLOSE : 2
 - 연결 수립된 source url  - url
+- cors 정보 - withCredentials
 - 
