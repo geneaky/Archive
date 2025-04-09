@@ -16,3 +16,5 @@ connection이 한 번 수립되면 서버로부터 들어오는 message(*event*)
 EventSource(): 상세 서버 주소로부터 event를 전달받을 인스턴스 생성
 
 
+##### eventsource instance의 프로퍼티
+- 연결 상태 
