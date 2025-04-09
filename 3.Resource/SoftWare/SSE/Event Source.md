@@ -9,3 +9,4 @@ http 서버는 text/event-stream 포맷으로 이벤트를 보낸다
 
 > EventTarget <- EventSource
 
+connection이 한 번 수립되면 서버로부터 들어오는 message(*event*) 는 코드의 event 폼
