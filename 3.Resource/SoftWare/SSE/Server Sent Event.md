@@ -13,14 +13,14 @@ message - field의 집합
 field - 텍스트 라인의 집합
 
 
-각 필드는 
+각 필드는 필드의 이름(key) , 콜론, 그 필드 값에 해당하는 데이터 (value)로 표시된다
 
 ```
 message
 :
 
 message
-\n\n
+name:\n\n
 
 ```
 
