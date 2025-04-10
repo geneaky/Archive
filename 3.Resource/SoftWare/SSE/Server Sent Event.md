@@ -23,3 +23,6 @@ message
 name:John\n\nage:15\n\n
 ```
 
+메시지는 아래 필드로 구성된다
+- event
+- 
