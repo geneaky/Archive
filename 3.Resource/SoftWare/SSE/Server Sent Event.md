@@ -13,7 +13,7 @@ message - field의 집합
 field - 텍스트 라인의 집합
 
 
-
+각 필드는 
 
 ```
 message
