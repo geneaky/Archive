@@ -19,7 +19,6 @@ job 설정을 통해 생성되는 객체 단위
 
 
 Job Launcher가 Job Parameter와 Job객체 자체를 인자로 받아 실행(run)한다
-
 Job객채의 execute() 메서드는 여러 Step을 실행한다
 
 
