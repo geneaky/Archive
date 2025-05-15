@@ -18,4 +18,5 @@ job 설정을 통해 생성되는 객체 단위
 - Flow 객체를 실행시켜서 작업을 진행
 
 
+Job Launcher가 Job Parameter와 Job객체 자체를 인자로 받아 실행(run)한다
 
