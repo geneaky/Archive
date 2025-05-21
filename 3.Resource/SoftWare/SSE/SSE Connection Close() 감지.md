@@ -7,4 +7,3 @@ tomcat http connection timeout, keep alive timeout 조절로 테스트 -> tcp보
 
 대안
 sse connection timeout을 설정하고 주기적으로 ping을 보내면 ping send시에 만료된 커넥션 구분이 가능해서 expired event handling에서 만료된 커넥션 삭제 처리 -> 빠른 메모리 반환 -> oom 방지
- 
